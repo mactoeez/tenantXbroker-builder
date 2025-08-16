@@ -1,18 +1,12 @@
 import { defineConfig } from "vite";
 import path from "path";
 
-// Server build configuration
+// Server build configuration for Node SSR
 export default defineConfig({
   build: {
-    lib: {
-      entry: path.resolve(__dirname, "server/node-build.ts"),
-      name: "server",
-      fileName: "production",
-      formats: ["es"],
-    },
-    outDir: "dist/server",
+    ssr: path.resolve(__dirname, "server/node-build.ts"), // entry for SSR
+    outDir: "dist/server", // output directory
     target: "node22",
-    ssr: true,
     rollupOptions: {
       external: [
         // Node.js built-ins
@@ -29,16 +23,16 @@ export default defineConfig({
         "buffer",
         "querystring",
         "child_process",
-        // External dependencies that should not be bundled
+        // external dependencies not to bundle
         "express",
         "cors",
       ],
       output: {
-        format: "es",
-        entryFileNames: "[name].mjs",
+        format: "esm", // output as ES module
+        entryFileNames: "server.mjs", // generated server file
       },
     },
-    minify: false, // Keep readable for debugging
+    minify: false,
     sourcemap: true,
   },
   resolve: {
