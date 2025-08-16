@@ -1,97 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
+   * Modern minimalistic theme for tenant-broker platform
+   * HSL color format for consistent Tailwind integration
   */
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 11% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Modern blue-purple gradient primary */
+    --primary: 253 74% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-50: 253 74% 97%;
+    --primary-100: 253 74% 92%;
+    --primary-200: 253 74% 85%;
+    --primary-300: 253 74% 76%;
+    --primary-400: 253 74% 69%;
+    --primary-500: 253 74% 62%;
+    --primary-600: 253 74% 55%;
+    --primary-700: 253 74% 48%;
+    --primary-800: 253 74% 41%;
+    --primary-900: 253 74% 34%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 6% 97%;
+    --secondary-foreground: 210 11% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 6% 97%;
+    --muted-foreground: 210 6% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 6% 95%;
+    --accent-foreground: 210 11% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 6% 92%;
+    --input: 210 6% 97%;
+    --ring: 253 74% 62%;
 
-    --radius: 0.5rem;
+    /* Modern gray scale */
+    --gray-50: 210 6% 98%;
+    --gray-100: 210 6% 95%;
+    --gray-200: 210 6% 90%;
+    --gray-300: 210 6% 82%;
+    --gray-400: 210 6% 64%;
+    --gray-500: 210 6% 46%;
+    --gray-600: 210 6% 38%;
+    --gray-700: 210 6% 29%;
+    --gray-800: 210 6% 21%;
+    --gray-900: 210 11% 15%;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 210 11% 15%;
+    --sidebar-primary: 253 74% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 6% 95%;
+    --sidebar-accent-foreground: 210 11% 15%;
+    --sidebar-border: 210 6% 92%;
+    --sidebar-ring: 253 74% 62%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 11% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 11% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 11% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 253 74% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-50: 253 74% 8%;
+    --primary-100: 253 74% 12%;
+    --primary-200: 253 74% 18%;
+    --primary-300: 253 74% 25%;
+    --primary-400: 253 74% 35%;
+    --primary-500: 253 74% 62%;
+    --primary-600: 253 74% 68%;
+    --primary-700: 253 74% 75%;
+    --primary-800: 253 74% 82%;
+    --primary-900: 253 74% 88%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 11% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 11% 10%;
+    --muted-foreground: 210 6% 64%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 11% 12%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 210 11% 12%;
+    --input: 210 11% 10%;
+    --ring: 253 74% 62%;
+
+    --gray-50: 210 11% 6%;
+    --gray-100: 210 11% 8%;
+    --gray-200: 210 11% 12%;
+    --gray-300: 210 11% 18%;
+    --gray-400: 210 6% 38%;
+    --gray-500: 210 6% 46%;
+    --gray-600: 210 6% 64%;
+    --gray-700: 210 6% 82%;
+    --gray-800: 210 6% 90%;
+    --gray-900: 0 0% 98%;
+
+    --sidebar-background: 210 11% 4%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 253 74% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 11% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 11% 12%;
+    --sidebar-ring: 253 74% 62%;
   }
 }
 
@@ -101,6 +140,23 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+
+  .dark .glass-effect {
+    @apply bg-gray-900/80 backdrop-blur-sm border border-gray-800/20;
   }
 }
