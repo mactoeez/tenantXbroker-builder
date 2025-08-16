@@ -88,11 +88,11 @@ export default {
         "3xl": "1.5rem",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
+        "18": "4.5rem",
+        "88": "22rem",
       },
       keyframes: {
         "accordion-down": {

@@ -16,21 +16,35 @@ export function Navigation() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
               <Home className="w-5 h-5 text-white" />
             </div>
-            <span className="font-semibold text-xl gradient-text">RentConnect</span>
+            <span className="font-semibold text-xl gradient-text">
+              RentConnect
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-600 hover:text-primary-600 transition-colors">
+            <Link
+              to="/"
+              className="text-gray-600 hover:text-primary-600 transition-colors"
+            >
               Home
             </Link>
-            <Link to="/browse" className="text-gray-600 hover:text-primary-600 transition-colors">
+            <Link
+              to="/browse"
+              className="text-gray-600 hover:text-primary-600 transition-colors"
+            >
               Browse Properties
             </Link>
-            <Link to="/brokers" className="text-gray-600 hover:text-primary-600 transition-colors">
+            <Link
+              to="/brokers"
+              className="text-gray-600 hover:text-primary-600 transition-colors"
+            >
               Find Brokers
             </Link>
-            <Link to="/about" className="text-gray-600 hover:text-primary-600 transition-colors">
+            <Link
+              to="/about"
+              className="text-gray-600 hover:text-primary-600 transition-colors"
+            >
               About
             </Link>
           </div>
@@ -51,43 +65,43 @@ export function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={cn(
-          "md:hidden transition-all duration-300 ease-in-out",
-          isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-        )}>
+        <div
+          className={cn(
+            "md:hidden transition-all duration-300 ease-in-out",
+            isOpen
+              ? "max-h-64 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden",
+          )}
+        >
           <div className="py-4 space-y-4 border-t border-gray-200">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="block text-gray-600 hover:text-primary-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              to="/browse" 
+            <Link
+              to="/browse"
               className="block text-gray-600 hover:text-primary-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Browse Properties
             </Link>
-            <Link 
-              to="/brokers" 
+            <Link
+              to="/brokers"
               className="block text-gray-600 hover:text-primary-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Find Brokers
             </Link>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               className="block text-gray-600 hover:text-primary-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
@@ -95,10 +109,14 @@ export function Navigation() {
             </Link>
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost" asChild>
-                <Link to="/login" onClick={() => setIsOpen(false)}>Sign In</Link>
+                <Link to="/login" onClick={() => setIsOpen(false)}>
+                  Sign In
+                </Link>
               </Button>
               <Button asChild>
-                <Link to="/register" onClick={() => setIsOpen(false)}>Get Started</Link>
+                <Link to="/register" onClick={() => setIsOpen(false)}>
+                  Get Started
+                </Link>
               </Button>
             </div>
           </div>

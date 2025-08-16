@@ -20,42 +20,60 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={
-            <>
-              <Navigation />
-              <Index />
-            </>
-          } />
-          <Route path="/browse" element={
-            <Placeholder
-              title="Browse Properties"
-              description="Discover thousands of verified properties from trusted brokers. Advanced filters help you find exactly what you're looking for."
-            />
-          } />
-          <Route path="/brokers" element={
-            <Placeholder
-              title="Find Brokers"
-              description="Connect with professional, verified brokers who understand your needs and local market expertise."
-            />
-          } />
-          <Route path="/about" element={
-            <Placeholder
-              title="About RentConnect"
-              description="Learn more about our mission to simplify the rental process and connect tenants with their perfect homes."
-            />
-          } />
-          <Route path="/login" element={
-            <Placeholder
-              title="Sign In"
-              description="Access your RentConnect account to manage your property searches, saved listings, and broker communications."
-            />
-          } />
-          <Route path="/register" element={
-            <Placeholder
-              title="Get Started"
-              description="Join thousands of happy tenants who found their perfect home through RentConnect. Sign up is quick and free!"
-            />
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <Navigation />
+                <Index />
+              </>
+            }
+          />
+          <Route
+            path="/browse"
+            element={
+              <Placeholder
+                title="Browse Properties"
+                description="Discover thousands of verified properties from trusted brokers. Advanced filters help you find exactly what you're looking for."
+              />
+            }
+          />
+          <Route
+            path="/brokers"
+            element={
+              <Placeholder
+                title="Find Brokers"
+                description="Connect with professional, verified brokers who understand your needs and local market expertise."
+              />
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Placeholder
+                title="About RentConnect"
+                description="Learn more about our mission to simplify the rental process and connect tenants with their perfect homes."
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <Placeholder
+                title="Sign In"
+                description="Access your RentConnect account to manage your property searches, saved listings, and broker communications."
+              />
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <Placeholder
+                title="Get Started"
+                description="Join thousands of happy tenants who found their perfect home through RentConnect. Sign up is quick and free!"
+              />
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
